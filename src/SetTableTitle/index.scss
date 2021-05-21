@@ -1,0 +1,25 @@
+.title {
+  font-family: PingFangSC-Medium;
+  font-weight: bolder;
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 9px;
+}
+.card {
+  cursor: move;
+  padding: 8px 10px;
+  border: 1px dashed #333333;
+  margin-bottom: 2px;
+  .cardItem {
+    display: flex;
+    justify-content: flex-end;
+  }
+  span {
+    margin-right: 8px;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #333333;
+    text-align: left;
+    flex: 1;
+  }
+}
