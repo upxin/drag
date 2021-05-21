@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "@alifd/next";
 import { tableList } from "./config";
-import { mockData } from "../mock"; // 假设是后端提供的
+import { mockData } from "../../mock"; // 假设是后端提供的
 import SetTableTitle from "../SetTableTitle";
 function ActiveTable() {
   const [titleData, setTitleData] = useState(mockData);
-  console.log("------", titleData);
   const getNewData = (e) => {
     setTitleData(e.detail.newData);
   };
