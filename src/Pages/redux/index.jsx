@@ -6,24 +6,16 @@ class App extends React.Component {
     constructor(props) {
         super(props);
     }
-    onAddNote(title, text) {
-        this.props.addNote(title, text);
-    }
-    deleteNote(id) {
-        this.props.deleteNote(id);
-    }
     render() {
         return (
             <div className="container">
-                <h1 className="header">{[8,9]}</h1>
-                <button onClick={() => this.onAddNote(991, 444)}>
+                <h1 className="header">{this.props.num}</h1>
+                <h1 className="header">{this.props.name}</h1>
+                <button onClick={() =>  this.props.addNum(2)}>
                     ++
                 </button>
-                <button
-                    notes={this.props.notes}
-                    onClick={(id) => this.deleteNote(id)}
-                >
-                    --
+                <button onClick={() =>this.props.setName('谢谢谢谢')}>
+                    姓
                 </button>
             </div>
         );
@@ -31,13 +23,15 @@ class App extends React.Component {
 }
 const mapStateToProps = (state) => {
     return {
-        notes: state.notes,
+        num: state.num,
+        name:state.name
     };
 };
 const mapActionToProps = (dispatch) => {
     // console.log(dispatch(actions.addNote))
     return {
-        addNote: (...arg) => dispatch(actions.addNote(arg)),
+        addNum: (...arg) => dispatch(actions.addNum(...arg)),
+        setName: (...arg) => dispatch(actions.setName(...arg)),
     };
 };
 export default connect(mapStateToProps, mapActionToProps)(App);

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ActiveTable from "./Components/Table";
 import Drag from "/src/pages/drag";
 import { Nav } from "@alifd/next";
-import ReduxDemo from '/src/pages/redux'
+import ReduxDemo from "/src/pages/redux"
 const { Item } = Nav;
 function App() {
     return (
