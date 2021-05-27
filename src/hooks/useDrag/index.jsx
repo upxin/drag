@@ -22,7 +22,8 @@ function useDrag() {
 
             startX = clientX;
             startY = clientY;
-            domRef.current.addEventListener("mousemove", move);
+            // 这里在PC端不能用domRef.current去监听move，因为鼠标快速移动的时候会有bug
+            document.documentElement.addEventListener("mousemove", move);
             domRef.current.addEventListener("mouseup", end);
         };
         const move = function (event) {
@@ -36,7 +37,7 @@ function useDrag() {
         const end = function () {
             positionRef.current.lastX = positionRef.current.currentX;
             positionRef.current.lastY = positionRef.current.currentY;
-            domRef.current.removeEventListener("mousemove", move);
+            document.documentElement.removeEventListener("mousemove", move);
             domRef.current.removeEventListener("mouseup", end);
         };
         domRef.current.addEventListener("mousedown", start);
